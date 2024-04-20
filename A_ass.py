@@ -60,16 +60,16 @@ rf_y_pred = rf_classifier.predict(X_test_vectorized)
 
 # Evaluation for Random Forest
 rf_accuracy = accuracy_score(y_test, rf_y_pred)
-rf_precision = precision_score(y_test, rf_y_pred)
-rf_recall = recall_score(y_test, rf_y_pred)
-rf_f1 = f1_score(y_test, rf_y_pred)
+rf_precision = precision_score(y_test, rf_y_pred,average='micro')
+rf_recall = recall_score(y_test, rf_y_pred,average='micro')
+rf_f1 = f1_score(y_test, rf_y_pred,average='micro')
 
 print("Random Forest Metrics:")
 print("Accuracy:", rf_accuracy)
 print("Precision:", rf_precision)
 print("Recall:", rf_recall)
 print("F1 Score:", rf_f1)
-print()
+# print()
 
 # Initialize and train Decision Tree Classifier
 dt_classifier = DecisionTreeClassifier()
@@ -80,9 +80,9 @@ dt_y_pred = dt_classifier.predict(X_test_vectorized)
 
 # Evaluation for Decision Tree
 dt_accuracy = accuracy_score(y_test, dt_y_pred)
-dt_precision = precision_score(y_test, dt_y_pred)
-dt_recall = recall_score(y_test, dt_y_pred)
-dt_f1 = f1_score(y_test, dt_y_pred)
+dt_precision = precision_score(y_test, dt_y_pred,average='micro')
+dt_recall = recall_score(y_test, dt_y_pred,average='micro')
+dt_f1 = f1_score(y_test, dt_y_pred,average='micro')
 
 print("Decision Tree Metrics:")
 print("Accuracy:", dt_accuracy)
@@ -100,9 +100,9 @@ mlp_y_pred = mlp_classifier.predict(X_test_vectorized)
 
 # Evaluation for Multilayer Perceptron
 mlp_accuracy = accuracy_score(y_test, mlp_y_pred)
-mlp_precision = precision_score(y_test, mlp_y_pred)
-mlp_recall = recall_score(y_test, mlp_y_pred)
-mlp_f1 = f1_score(y_test, mlp_y_pred)
+mlp_precision = precision_score(y_test, mlp_y_pred,average='micro')
+mlp_recall = recall_score(y_test, mlp_y_pred,average='micro')
+mlp_f1 = f1_score(y_test, mlp_y_pred,average='micro')
 
 print("Multilayer Perceptron Metrics:")
 print("Accuracy:", mlp_accuracy)
